@@ -1,29 +1,38 @@
-Customer Behaviour Analysis
+# Customer Behaviour Analysis
+
 An end-to-end data analytics project exploring customer demographics,
 purchasing patterns, product-category performance, subscription status,
-discount usage, and customer reviews using Python, PostgreSQL, SQL,
-and Power BI.
-Project Overview
+discount usage, and customer reviews using **Python, PostgreSQL, SQL,
+and Power BI**.
+
+## Project Overview
+
 The goal of this project is to turn customer-level data into clear,
 business-focused insights. The workflow covers data inspection and
 preparation in Jupyter Notebook, SQL-based analysis in PostgreSQL, and
 interactive reporting in Power BI.
-The dataset contains 3,900 records and 16 original columns. The
+
+The dataset contains **3,900 records and 16 original columns**. The
 notebook's data-quality checks reported no missing values across the
 original fields.
-Objectives
-- Inspect and prepare customer data for analysis.
-- Explore customer demographics and purchasing behaviour.
-- Compare revenue and purchase patterns across genders, age groups,
-  and product categories.
-- Examine subscription status and discount usage.
-- Identify highly rated products and segment customers based on
-  previous purchases.
-- Present key metrics and comparisons in an interactive Power BI
-  dashboard.
-- Translate the findings into practical business recommendations.
-Tools & Technologies
+
+## Objectives
+
+-   Inspect and prepare customer data for analysis.
+-   Explore customer demographics and purchasing behaviour.
+-   Compare revenue and purchase patterns across genders, age groups,
+    and product categories.
+-   Examine subscription status and discount usage.
+-   Identify highly rated products and segment customers based on
+    previous purchases.
+-   Present key metrics and comparisons in an interactive Power BI
+    dashboard.
+-   Translate the findings into practical business recommendations.
+
+## Tools & Technologies
+
   Tool               Purpose
+  ------------------ --------------------------------------------------------------
   Python             Data preparation and analysis
   Pandas             Data inspection, cleaning, and feature engineering
   Jupyter Notebook   Interactive analysis and documentation
@@ -31,90 +40,146 @@ Tools & Technologies
   SQL                Aggregations, conditional queries, ranking, and segmentation
   SQLAlchemy         Loading the Pandas DataFrame into PostgreSQL
   Power BI           KPI cards, charts, slicers, and dashboard reporting
-Dataset
-The dataset contains the following types of information:
-- Customer profile: customer ID, age, gender, and location
-- Purchase details: item purchased, category, and purchase amount
-- Product attributes: size, colour, and season
-- Customer feedback: review rating
-- Engagement: subscription status and discount applied
-- Purchase history: previous purchases and frequency of purchases
-- Payment: payment method
-The project report records these descriptive statistics:
-- Customer records: 3,900
-- Age range: 18--70
-- Purchase amount range: $20--$100
-- Average purchase amount: approximately $59.76
-- Median purchase amount: $60
-- Average review rating: approximately 3.75 out of 5
-- Average previous purchases: approximately 25.35
-Data note: These values describe the dataset used for this
-project. The purchase amount is presented in USD as labelled in the
-source data.
 
-Workflow
-1. Data preparation in Python
+## Dataset
+
+The dataset contains the following types of information:
+
+-   **Customer profile:** customer ID, age, gender, and location
+-   **Purchase details:** item purchased, category, and purchase amount
+-   **Product attributes:** size, colour, and season
+-   **Customer feedback:** review rating
+-   **Engagement:** subscription status and discount applied
+-   **Purchase history:** previous purchases and frequency of purchases
+-   **Payment:** payment method
+
+The project report records these descriptive statistics:
+
+-   **Customer records:** 3,900
+-   **Age range:** 18--70
+-   **Purchase amount range:** \$20--\$100
+-   **Average purchase amount:** approximately \$59.76
+-   **Median purchase amount:** \$60
+-   **Average review rating:** approximately 3.75 out of 5
+-   **Average previous purchases:** approximately 25.35
+
+> **Data note:** These values describe the dataset used for this
+> project. The purchase amount is presented in USD as labelled in the
+> source data.
+
+## Workflow
+
+### 1. Data preparation in Python
+
 The Jupyter Notebook uses Pandas to:
-- Inspect the dataset structure and data types with info().
-- Review descriptive statistics with describe(include='all').
-- Check missing values with isnull().sum().
-- Standardise column names to lowercase snake_case.
-- Create four age groups using pandas.qcut.
-- Map purchase-frequency labels to approximate day intervals.
-- Load the prepared data into PostgreSQL using SQLAlchemy.
-2. SQL analysis in PostgreSQL
+
+-   Inspect the dataset structure and data types with `info()`.
+-   Review descriptive statistics with `describe(include='all')`.
+-   Check missing values with `isnull().sum()`.
+-   Standardise column names to lowercase snake_case.
+-   Create four age groups using `pandas.qcut`.
+-   Map purchase-frequency labels to approximate day intervals.
+-   Load the prepared data into PostgreSQL using SQLAlchemy.
+
+### 2. SQL analysis in PostgreSQL
+
 The SQL queries explore questions such as:
-- What is the total revenue generated by male and female customers?
-- Which customers used a discount and spent above the average purchase
-  amount?
-- Which five products have the highest average review ratings?
-- How do customer count, average spend, and total revenue compare
-  between subscribers and non-subscribers?
-- Which products have the highest percentage of purchases with
-  discounts applied?
-- How many customers fall into New, Returning, and Loyal segments
-  based on previous purchases?
-3. Power BI dashboard
+
+-   What is the total revenue generated by male and female customers?
+-   Which customers used a discount and spent above the average purchase
+    amount?
+-   Which five products have the highest average review ratings?
+-   How do customer count, average spend, and total revenue compare
+    between subscribers and non-subscribers?
+-   Which products have the highest percentage of purchases with
+    discounts applied?
+-   How many customers fall into New, Returning, and Loyal segments
+    based on previous purchases?
+
+### 3. Power BI dashboard
+
 The Power BI dashboard includes:
-- KPI cards: number of customers, average review rating, and
-  average purchase amount
-- Subscription analysis: subscriber share by subscription status
-- Category analysis: revenue and sales by product category
-- Age-group analysis: revenue and sales comparisons across age
-  groups
-- Interactive slicers: subscription status, gender, category, and
-  location
-Key Findings
+
+-   **KPI cards:** number of customers, average review rating, and
+    average purchase amount
+-   **Subscription analysis:** subscriber share by subscription status
+-   **Category analysis:** revenue and sales by product category
+-   **Age-group analysis:** revenue and sales comparisons across age
+    groups
+-   **Interactive slicers:** subscription status, gender, category, and
+    location
+
+## Key Findings
+
 Based on the report and dashboard:
-1. Dataset coverage: The analysis includes 3,900 customer records,
-   and the notebook's missing-value check reported no nulls in the
-   original columns.
-2. Typical spend: The average purchase amount is approximately
-   $59.76, while the median is $60.
-3. Customer ratings: The average review rating is approximately
-   3.75/5.
-4. Category performance: Clothing is the leading category in the
-   dashboard's revenue and sales charts, followed by Accessories,
-   Footwear, and Outerwear.
-5. Subscription mix: The dashboard shows approximately 27%
-   subscribers and 73% non-subscribers.
-6. Segment analysis: SQL queries classify customers as New,
-   Returning, or Loyal based on the number of previous purchases.
+
+1.  **Dataset coverage:** The analysis includes 3,900 customer records,
+    and the notebook's missing-value check reported no nulls in the
+    original columns.
+2.  **Typical spend:** The average purchase amount is approximately
+    **\$59.76**, while the median is **\$60**.
+3.  **Customer ratings:** The average review rating is approximately
+    **3.75/5**.
+4.  **Category performance:** Clothing is the leading category in the
+    dashboard's revenue and sales charts, followed by Accessories,
+    Footwear, and Outerwear.
+5.  **Subscription mix:** The dashboard shows approximately **27%
+    subscribers** and **73% non-subscribers**.
+6.  **Segment analysis:** SQL queries classify customers as New,
+    Returning, or Loyal based on the number of previous purchases.
+
 Exact values for individual SQL query results should be taken from the
 final query outputs; this README does not infer missing result values
 from chart images.
-Business Recommendations
-- Investigate the leading category: Evaluate margins, inventory
-  availability, returns, and item-level performance for Clothing.
-- Test subscription benefits: Explore offers for non-subscribers
-  and measure subscription conversion and repeat-purchase behaviour.
-- Evaluate discounts carefully: Compare discounted and
-  non-discounted purchases using revenue, margin, and basket
-  value---not discount rate alone.
-- Learn from customer reviews: Investigate lower-rated products
-  and recurring issues.
-- Use customer segments: Develop suitable onboarding, retention,
-  and loyalty initiatives for New, Returning, and Loyal customers.
-- Improve future analysis: Add transaction dates and order
-  identifiers, if available, to support trend, cohort, and
-  basket-level analysis.
+
+## Business Recommendations
+
+-   **Investigate the leading category:** Evaluate margins, inventory
+    availability, returns, and item-level performance for Clothing.
+-   **Test subscription benefits:** Explore offers for non-subscribers
+    and measure subscription conversion and repeat-purchase behaviour.
+-   **Evaluate discounts carefully:** Compare discounted and
+    non-discounted purchases using revenue, margin, and basket
+    value---not discount rate alone.
+-   **Learn from customer reviews:** Investigate lower-rated products
+    and recurring issues.
+-   **Use customer segments:** Develop suitable onboarding, retention,
+    and loyalty initiatives for New, Returning, and Loyal customers.
+-   **Improve future analysis:** Add transaction dates and order
+    identifiers, if available, to support trend, cohort, and
+    basket-level analysis.
+
+## Limitations
+
+-   The available fields shown in the project do not include a
+    transaction date or order ID, which limits time-series, cohort, and
+    basket-level analysis.
+-   The conversion of purchase-frequency labels into day intervals is an
+    approximation and should be validated before being used for further
+    modelling.
+-   The New, Returning, and Loyal customer thresholds are
+    project-defined and should be validated with business stakeholders.
+-   Revenue does not represent profit; margin and cost data would be
+    needed for profitability analysis.
+-   Findings describe patterns in this dataset and should not be
+    interpreted as proof of causation.
+
+## Conclusion
+
+This project demonstrates an end-to-end analytics workflow: **Python for
+data preparation, SQL for structured business analysis, and Power BI for
+interactive data storytelling**. It showcases practical skills in data
+cleaning, exploratory analysis, feature engineering, SQL aggregation,
+customer segmentation, KPI design, dashboard development, and business
+recommendations.
+
+## Author
+
+**Saniya Kulsum H**\
+Aspiring Data Analyst \| Business Intelligence
+
+------------------------------------------------------------------------
+
+*This project was created for learning and portfolio demonstration
+purposes.*
+
